@@ -2,16 +2,19 @@ import loanController from "../controllers/loan.controller.js";
 import {
   validate,
   validateBookId,
+  validateLoanId,
 } from "../middlewares/validation.middleware.js";
+import authMiddleware from "../middlewares/auth.middleware.js";
 
 import { Router } from "express";
-import { bookSchema } from "../schemas/book.schema.js";
+import { loanSchema } from "../schemas/loan.schema.js";
 
 const router = Router();
 
-router.post("/", validate(bookSchema), loanController.createLoanController);
+router.use(authMiddleware);
+router.post("/", validate(loanSchema), loanController.createLoanController);
 router.get("/", loanController.findAllLoansController);
-router.get("/:id", validateBookId, loanController.findLoanByIdController);
-router.delete("/:id", validateBookId, loanController.deleteLoanController);
+router.get("/:id", validateLoanId, loanController.findLoanByIdController);
+router.delete("/:id", validateLoanId, loanController.deleteLoanController);
 
 export default router;

@@ -1,0 +1,283 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "community_library",
+    "collectionId": "63b26b70-f12c-4f2e-8d3a-6aeb4cb49cd4",
+    "dateExported": "2024-06-05T03:09:45.927Z",
+    "version": "1.2",
+    "folders": [
+        {
+            "_id": "7f3af620-3651-48b4-a5f0-b0561a78e5d3",
+            "name": "users",
+            "containerId": "",
+            "created": "2024-06-05T01:23:31.478Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "aeed054d-298b-4b58-be7c-cdf4e5ff3332",
+            "name": "book",
+            "containerId": "",
+            "created": "2024-06-05T02:14:46.117Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "6218f49d-4f43-4b05-a8d6-2967732ccb86",
+            "name": "loan",
+            "containerId": "",
+            "created": "2024-06-05T02:15:34.449Z",
+            "sortNum": 30000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "b13eb26e-92e3-4b5f-b93d-2e7f01d81c40",
+            "colId": "63b26b70-f12c-4f2e-8d3a-6aeb4cb49cd4",
+            "containerId": "6218f49d-4f43-4b05-a8d6-2967732ccb86",
+            "name": "CREATE",
+            "url": "http://localhost:3000/loans",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-06-05T03:02:40.813Z",
+            "modified": "2024-06-05T03:05:02.888Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"bookId\": 1\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzE3NTU2NDI5LCJleHAiOjE3MTc2NDI4Mjl9.65qBcwXhk28xiv2jzr5liq-PA7F5Na2gKLhWC0UqSaI"
+            }
+        },
+        {
+            "_id": "43d62036-a159-4661-91b6-7074cd8799bb",
+            "colId": "63b26b70-f12c-4f2e-8d3a-6aeb4cb49cd4",
+            "containerId": "7f3af620-3651-48b4-a5f0-b0561a78e5d3",
+            "name": "CREATE",
+            "url": "http://localhost:3000/users",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-06-05T01:23:39.504Z",
+            "modified": "2024-06-05T01:27:28.009Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"username\": \"thiago\",\n  \"email\": \"thiago@gmail.com\",\n  \"password\": \"123456\",\n  \"avatar\": \"https://cdn-icons-png.flaticon.com/512/149/149071.png\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "963a433c-ee3d-4f9d-b6c4-40859dd6ee7a",
+            "colId": "63b26b70-f12c-4f2e-8d3a-6aeb4cb49cd4",
+            "containerId": "6218f49d-4f43-4b05-a8d6-2967732ccb86",
+            "name": "GETALL",
+            "url": "http://localhost:3000/loans",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-06-05T03:02:58.423Z",
+            "modified": "2024-06-05T03:06:29.150Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzE3NTU2NDI5LCJleHAiOjE3MTc2NDI4Mjl9.65qBcwXhk28xiv2jzr5liq-PA7F5Na2gKLhWC0UqSaI"
+            }
+        },
+        {
+            "_id": "50b88896-4b98-47f0-af4d-dc9cdee0e1a3",
+            "colId": "63b26b70-f12c-4f2e-8d3a-6aeb4cb49cd4",
+            "containerId": "7f3af620-3651-48b4-a5f0-b0561a78e5d3",
+            "name": "GETALL",
+            "url": "http://localhost:3000/users",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-06-05T01:27:38.649Z",
+            "modified": "2024-06-05T01:42:03.241Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzE3NTUxNzA5LCJleHAiOjE3MTc2MzgxMDl9.5rZUeWBWUKK5Xq_PTnj8IsQMyFTDP7ZakA4UZkNQumg"
+            }
+        },
+        {
+            "_id": "85967869-efb7-4e66-85b2-a9d370d76156",
+            "colId": "63b26b70-f12c-4f2e-8d3a-6aeb4cb49cd4",
+            "containerId": "7f3af620-3651-48b4-a5f0-b0561a78e5d3",
+            "name": "LOGIN",
+            "url": "http://localhost:3000/users/login",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-06-05T02:06:28.058Z",
+            "modified": "2024-06-05T02:08:12.701Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"thiago@gmail.com\",\n  \"password\": \"1234567\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "65461531-b2f3-47b8-a27b-27d2d5180dfa",
+            "colId": "63b26b70-f12c-4f2e-8d3a-6aeb4cb49cd4",
+            "containerId": "6218f49d-4f43-4b05-a8d6-2967732ccb86",
+            "name": "GETBYID",
+            "url": "http://localhost:3000/loans/1",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-06-05T03:03:05.712Z",
+            "modified": "2024-06-05T03:07:52.869Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzE3NTU2NDI5LCJleHAiOjE3MTc2NDI4Mjl9.65qBcwXhk28xiv2jzr5liq-PA7F5Na2gKLhWC0UqSaI"
+            }
+        },
+        {
+            "_id": "6052c7fe-6e6f-4762-bcda-dd64295a9c8d",
+            "colId": "63b26b70-f12c-4f2e-8d3a-6aeb4cb49cd4",
+            "containerId": "7f3af620-3651-48b4-a5f0-b0561a78e5d3",
+            "name": "GETBYID",
+            "url": "http://localhost:3000/users/1",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-06-05T01:29:54.594Z",
+            "modified": "2024-06-05T01:42:12.407Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzE3NTUxNzA5LCJleHAiOjE3MTc2MzgxMDl9.5rZUeWBWUKK5Xq_PTnj8IsQMyFTDP7ZakA4UZkNQumg"
+            }
+        },
+        {
+            "_id": "4b9e38fc-a8ab-47b4-9bd0-2286aa5dfdca",
+            "colId": "63b26b70-f12c-4f2e-8d3a-6aeb4cb49cd4",
+            "containerId": "6218f49d-4f43-4b05-a8d6-2967732ccb86",
+            "name": "DELETE",
+            "url": "http://localhost:3000/loans/1",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-06-05T03:03:10.395Z",
+            "modified": "2024-06-05T03:07:09.641Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzE3NTU2NDI5LCJleHAiOjE3MTc2NDI4Mjl9.65qBcwXhk28xiv2jzr5liq-PA7F5Na2gKLhWC0UqSaI"
+            }
+        },
+        {
+            "_id": "0d828085-8e5a-447b-858a-b5bb7c71be8c",
+            "colId": "63b26b70-f12c-4f2e-8d3a-6aeb4cb49cd4",
+            "containerId": "7f3af620-3651-48b4-a5f0-b0561a78e5d3",
+            "name": "UPDATE",
+            "url": "http://localhost:3000/users",
+            "method": "PATCH",
+            "sortNum": 50000,
+            "created": "2024-06-05T01:49:16.691Z",
+            "modified": "2024-06-05T01:50:08.223Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"username\": \"thiagolima\",\n  \"email\": \"thiago@gmail.com\",\n  \"password\": \"1234567\",\n  \"avatar\": \"https://cdn-icons-png.flaticon.com/512/149/149071.png\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzE3NTUxNzA5LCJleHAiOjE3MTc2MzgxMDl9.5rZUeWBWUKK5Xq_PTnj8IsQMyFTDP7ZakA4UZkNQumg"
+            }
+        },
+        {
+            "_id": "14a7fffc-d772-438a-986c-d40d5a382c9f",
+            "colId": "63b26b70-f12c-4f2e-8d3a-6aeb4cb49cd4",
+            "containerId": "7f3af620-3651-48b4-a5f0-b0561a78e5d3",
+            "name": "DELETE",
+            "url": "http://localhost:3000/users/1",
+            "method": "DELETE",
+            "sortNum": 60000,
+            "created": "2024-06-05T02:08:22.908Z",
+            "modified": "2024-06-05T02:13:42.371Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzE3NTUzMjkyLCJleHAiOjE3MTc2Mzk2OTJ9.aC4djTMkFFfNoteUocoejDuvz3yWBKFm0FgzsbgKROo"
+            }
+        },
+        {
+            "_id": "a06d94b3-4f20-4aa0-8b1d-017384475156",
+            "colId": "63b26b70-f12c-4f2e-8d3a-6aeb4cb49cd4",
+            "containerId": "aeed054d-298b-4b58-be7c-cdf4e5ff3332",
+            "name": "CREATE",
+            "url": "http://localhost:3000/books",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2024-06-05T02:55:59.172Z",
+            "modified": "2024-06-05T03:09:26.767Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"O poder do habito3\",\n  \"author\": \"Charles Duhigg\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzE3NTU2NDI5LCJleHAiOjE3MTc2NDI4Mjl9.65qBcwXhk28xiv2jzr5liq-PA7F5Na2gKLhWC0UqSaI"
+            }
+        },
+        {
+            "_id": "1e68e967-788c-4134-9624-3889b0a5e27a",
+            "colId": "63b26b70-f12c-4f2e-8d3a-6aeb4cb49cd4",
+            "containerId": "aeed054d-298b-4b58-be7c-cdf4e5ff3332",
+            "name": "UPDATE",
+            "url": "http://localhost:3000/books",
+            "method": "PATCH",
+            "sortNum": 80000,
+            "created": "2024-06-05T02:58:15.343Z",
+            "modified": "2024-06-05T02:59:26.749Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"O poder do habito2\",\n  \"author\": \"Charles Duhigg\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "97085909-ef31-478c-8df0-1a3ddfa933f1",
+            "colId": "63b26b70-f12c-4f2e-8d3a-6aeb4cb49cd4",
+            "containerId": "aeed054d-298b-4b58-be7c-cdf4e5ff3332",
+            "name": "GETALL",
+            "url": "http://localhost:3000/books",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2024-06-05T02:58:52.524Z",
+            "modified": "2024-06-05T03:09:12.408Z",
+            "headers": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzE3NTU2NDI5LCJleHAiOjE3MTc2NDI4Mjl9.65qBcwXhk28xiv2jzr5liq-PA7F5Na2gKLhWC0UqSaI"
+            }
+        },
+        {
+            "_id": "f19ad2de-bc54-42c9-b0db-02f16340fcff",
+            "colId": "63b26b70-f12c-4f2e-8d3a-6aeb4cb49cd4",
+            "containerId": "aeed054d-298b-4b58-be7c-cdf4e5ff3332",
+            "name": "GETBYID",
+            "url": "http://localhost:3000/books/1",
+            "method": "GET",
+            "sortNum": 90000,
+            "created": "2024-06-05T02:59:40.955Z",
+            "modified": "2024-06-05T02:59:56.173Z",
+            "headers": []
+        },
+        {
+            "_id": "2630eb49-6ec1-49e4-b640-9d379dfa7e0b",
+            "colId": "63b26b70-f12c-4f2e-8d3a-6aeb4cb49cd4",
+            "containerId": "aeed054d-298b-4b58-be7c-cdf4e5ff3332",
+            "name": "DELETE",
+            "url": "http://localhost:3000/books/1",
+            "method": "DELETE",
+            "sortNum": 90000,
+            "created": "2024-06-05T03:00:05.411Z",
+            "modified": "2024-06-05T03:00:18.257Z",
+            "headers": []
+        }
+    ],
+    "ref": "ha_FhvIwyBeLfWSiwb9hwDxR0talbRG8QDzHt9iGPVStHuKlVoZNDmQUet-pqR0ypysixDH9ULGVpeBrgIEPXw"
+}

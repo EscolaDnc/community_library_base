@@ -3,12 +3,14 @@ import {
   validate,
   validateBookId,
 } from "../middlewares/validation.middleware.js";
+import authMiddleware from "../middlewares/auth.middleware.js";
 
 import { Router } from "express";
 import { bookSchema } from "../schemas/book.schema.js";
 
 const router = Router();
 
+router.use(authMiddleware);
 router.post("/", validate(bookSchema), bookController.createBookController);
 router.get("/", bookController.findAllBooksController);
 router.get("/:id", validateBookId, bookController.findBookByIdController);

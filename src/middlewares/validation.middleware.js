@@ -22,7 +22,7 @@ const validateUserId = (req, res, next) => {
 
 const validateBookId = (req, res, next) => {
     try {
-        bookIdSchema.parse({ bookId: req.params.id });
+        bookIdSchema.parse({ bookId: +req.params.id });
         next();
     } catch (e) {
         res.status(400).json({ error: e.errors });
@@ -33,7 +33,7 @@ import { loanIdSchema } from '../schemas/loan.schema.js';
 
 const validateLoanId = (req, res, next) => {
     try {
-        loanIdSchema.parse({ loanId: req.params.id });
+        loanIdSchema.parse({ loanId: +req.params.id });
         next();
     } catch (e) {
         res.status(400).json({ error: e.errors });
