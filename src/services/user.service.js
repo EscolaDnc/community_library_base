@@ -17,6 +17,15 @@ async function createUserService(newUser) {
   return token;
 }
 
+async function userLoginService(email, password) {
+  const user = await userRepositories.findByEmailUserRepository(email);
+  if (!user) throw new Error("Invalid credentials");
+  const isValid = await bcrypt.compare(password, user.password);
+  if (!isValid) throw new Error("Invalid credentials");
+  const token = authService.generateToken(user.id);
+  return token;
+}
+
 async function findAllUserService() {
   const users = await userRepositories.findAllUserRepository();
   return users;
@@ -33,7 +42,7 @@ async function updateUserService(newUser, userId) {
   if (!user) throw new Error("User not found");
   if (newUser.password)
     newUser.password = await bcrypt.hash(newUser.password, 10);
-  await userRepositories.updateUserRepository(userId, user);
+  await userRepositories.updateUserRepository(userId, newUser);
   return { message: "User successfully updated!" };
 }
 
@@ -46,6 +55,7 @@ async function deleteUserService(userId) {
 
 export default {
   createUserService,
+  userLoginService,
   findAllUserService,
   findUserByIdService,
   updateUserService,

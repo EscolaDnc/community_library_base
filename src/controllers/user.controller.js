@@ -11,6 +11,17 @@ async function createUserController(req, res) {
   }
 }
 
+async function userLoginController(req, res) {
+  const { email, password } = req.body;
+
+  try {
+    const token = await userService.userLoginService(email, password);
+    res.send(token);
+  } catch (e) {
+    return res.status(400).send(e.message);
+  }
+}
+
 async function findAllUserController(req, res) {
   try {
     const users = await userService.findAllUserService();
@@ -33,7 +44,7 @@ async function findUserByIdController(req, res) {
 async function updateUserController(req, res) {
   try {
     const newUser = req.body;
-    const userId = req.userId;
+    const userId = req.params.id;
     const response = await userService.updateUserService(newUser, userId);
     return res.send(response);
   } catch (e) {
@@ -43,8 +54,8 @@ async function updateUserController(req, res) {
 
 async function deleteUserController(req, res) {
   try {
-    const userId = req.userId;
-    const response = await userService.deleteUserController(userId);
+    const userId = req.params.id;
+    const response = await userService.deleteUserService(userId);
     return res.send(response);
   } catch (e) {
     res.status(400).send(e.message);
@@ -53,6 +64,7 @@ async function deleteUserController(req, res) {
 
 export default {
   createUserController,
+  userLoginController,
   findAllUserController,
   findUserByIdController,
   updateUserController,

@@ -10,13 +10,17 @@ db.run(`CREATE TABLE IF NOT EXISTS users (
 
 function findByEmailUserRepository(email) {
   return new Promise((resolve, reject) => {
-    db.get(`SELECT id, username, email, avatar FROM users WHERE email = ?`, [email], (err, row) => {
-      if (err) {
-        reject(err);
-      } else {
-        resolve(row);
+    db.get(
+      `SELECT id, username, email, avatar, password FROM users WHERE email = ?`,
+      [email],
+      (err, row) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(row);
+        }
       }
-    });
+    );
   });
 }
 
@@ -51,30 +55,56 @@ function findAllUserRepository() {
 
 function findByIdUserRepository(userId) {
   return new Promise((resolve, reject) => {
-    db.get(`SELECT id, username, email, avatar FROM users WHERE id = ?`, [userId], (err, row) => {
-      if (err) {
-        reject(err);
-      } else {
-        resolve(row);
+    db.get(
+      `SELECT id, username, email, avatar FROM users WHERE id = ?`,
+      [userId],
+      (err, row) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(row);
+        }
       }
-    });
+    );
   });
 }
 
 function updateUserRepository(userId, user) {
   return new Promise((resolve, reject) => {
     const { username, email, password, avatar } = user;
-    db.run(
-      `UPDATE users SET username = ?, email = ?, password = ?, avatar = ? WHERE id = ?`,
-      [username, email, password, avatar, userId],
-      function (err) {
-        if (err) {
-          reject(err);
-        } else {
-          resolve({ id: userId, ...user });
-        }
+    let query = "UPDATE users SET";
+    const values = [];
+
+    if (username !== undefined) {
+      query += " username = ?,";
+      values.push(username);
+    }
+    if (email !== undefined) {
+      query += " email = ?,";
+      values.push(email);
+    }
+    if (password !== undefined) {
+      query += " password = ?,";
+      values.push(password);
+    }
+    if (avatar !== undefined) {
+      query += " avatar = ?,";
+      values.push(avatar);
+    }
+
+    // Remove a vírgula extra no final da query
+    query = query.slice(0, -1);
+
+    query += " WHERE id = ?";
+    values.push(userId);
+
+    db.run(query, values, function (err) {
+      if (err) {
+        reject(err);
+      } else {
+        resolve({ id: userId, ...user });
       }
-    );
+    });
   });
 }
 
