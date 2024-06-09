@@ -1,7 +1,6 @@
 import loanController from "../controllers/loan.controller.js";
 import {
   validate,
-  validateBookId,
   validateLoanId,
 } from "../middlewares/validation.middleware.js";
 import authMiddleware from "../middlewares/auth.middleware.js";

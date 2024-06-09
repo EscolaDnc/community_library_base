@@ -92,7 +92,6 @@ function updateUserRepository(userId, user) {
       values.push(avatar);
     }
 
-    // Remove a vírgula extra no final da query
     query = query.slice(0, -1);
 
     query += " WHERE id = ?";

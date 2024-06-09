@@ -1,5 +1,6 @@
 import { bookIdSchema } from '../schemas/book.schema.js';
-import { userSchema, userIdSchema } from '../schemas/user.schema.js';
+import { userIdSchema } from '../schemas/user.schema.js';
+import { loanIdSchema } from '../schemas/loan.schema.js';
 
 const validate = (schema) => (req, res, next) => {
     try {
@@ -29,7 +30,6 @@ const validateBookId = (req, res, next) => {
     }
 };
 
-import { loanIdSchema } from '../schemas/loan.schema.js';
 
 const validateLoanId = (req, res, next) => {
     try {
