@@ -39,10 +39,17 @@ async function deleteBookService(bookId, userId) {
   return response;
 }
 
+async function searchBooksService(search) {
+  if (!search) return await bookRepository.findAllBooksRepository();
+  const books = await bookRepository.searchBooksRepository(search);
+  return books;
+}
+
 export default {
   createBookService,
   findAllBooksService,
   findBookByIdService,
   updateBookService,
   deleteBookService,
+  searchBooksService,
 };
