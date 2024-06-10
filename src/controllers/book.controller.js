@@ -36,7 +36,11 @@ async function updateBookController(req, res) {
     const updatedBook = req.body;
     const bookId = req.params.id;
     const userId = req.userId;
-    const response = await bookService.updateBookService(updatedBook, bookId, userId);
+    const response = await bookService.updateBookService(
+      updatedBook,
+      bookId,
+      userId
+    );
     return res.send(response);
   } catch (error) {
     res.status(400).send(error.message);
@@ -56,8 +60,8 @@ async function deleteBookController(req, res) {
 
 async function searchBooksController(req, res) {
   try {
-    const search = req.query;
-    const books = await bookService.searchBooksService(search);
+    const { text } = req.query;
+    const books = await bookService.searchBooksService(text);
     return res.send(books);
   } catch (error) {
     res.status(400).send(error.message);

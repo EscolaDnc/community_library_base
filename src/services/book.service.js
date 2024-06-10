@@ -39,9 +39,9 @@ async function deleteBookService(bookId, userId) {
   return response;
 }
 
-async function searchBooksService(search) {
-  if (!search) return await bookRepository.findAllBooksRepository();
-  const books = await bookRepository.searchBooksRepository(search);
+async function searchBooksService(text) {
+  if (!text) return await bookRepository.findAllBooksRepository();
+  const books = await bookRepository.searchBooksRepository(text);
   return books;
 }
 

@@ -13,9 +13,9 @@ const router = Router();
 router.use(authMiddleware);
 router.post("/", validate(bookSchema), bookController.createBookController);
 router.get("/", bookController.findAllBooksController);
+router.get("/search", bookController.searchBooksController);
 router.get("/:id", validateBookId, bookController.findBookByIdController);
 router.patch("/:id", validateBookId, bookController.updateBookController);
 router.delete("/:id", validateBookId, bookController.deleteBookController);
-router.get("/search", bookController.searchBooksController);
 
 export default router;

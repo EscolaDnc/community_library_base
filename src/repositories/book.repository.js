@@ -92,11 +92,11 @@ function deleteBookRepository(bookId) {
   });
 }
 
-function searchBooksRepository(search) {
+function searchBooksRepository(text) {
   return new Promise((resolve, reject) => {
     db.all(
       `SELECT * FROM books WHERE title LIKE ? OR author LIKE ?`,
-      [`%${search}%`, `%${search}%`],
+      [`%${text}%`, `%${text}%`],
       (err, rows) => {
         if (err) {
           reject(err);
