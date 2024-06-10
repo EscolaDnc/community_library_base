@@ -1,4 +1,4 @@
-import db from "../database/database.js";
+import db from "../config/database.js";
 
 db.run(`CREATE TABLE IF NOT EXISTS loans (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
