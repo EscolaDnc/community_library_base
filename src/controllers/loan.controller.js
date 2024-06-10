@@ -1,11 +1,11 @@
 import loanService from "../services/loan.service.js";
 
 async function createLoanController(req, res) {
-  const { bookId } = req.body;
+  const { bookId, dueDate } = req.body;
   const userId = req.userId;
 
   try {
-    const createdLoan = await loanService.createLoanService(userId, bookId);
+    const createdLoan = await loanService.createLoanService(userId, bookId, dueDate);
     res.status(201).send(createdLoan);
   } catch (error) {
     return res.status(400).send(error.message);

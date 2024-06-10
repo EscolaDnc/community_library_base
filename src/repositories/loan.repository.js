@@ -4,15 +4,18 @@ db.run(`CREATE TABLE IF NOT EXISTS loans (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   userId INTEGER,
   bookId INTEGER,
+  dueDate DATE,
   FOREIGN KEY (userId) REFERENCES users(id),
   FOREIGN KEY (bookId) REFERENCES books(id)
 )`);
 
-function createLoanRepository(userId, bookId) {
+//DEFAULT (DATETIME('now', '+14 days'))
+
+function createLoanRepository(userId, bookId, dueDate) {
   return new Promise((resolve, reject) => {
     db.run(
-      `INSERT INTO loans (userId, bookId) VALUES (?, ?)`,
-      [userId, bookId],
+      `INSERT INTO loans (userId, bookId, dueDate) VALUES (?, ?, ?)`,
+      [userId, bookId, dueDate],
       function (err) {
         if (err) {
           reject(err);
@@ -26,7 +29,12 @@ function createLoanRepository(userId, bookId) {
 
 function findAllLoansRepository() {
   return new Promise((resolve, reject) => {
-    db.all(`SELECT * FROM loans`, [], (err, rows) => {
+    db.all(`
+      SELECT loans.id, loans.dueDate, users.email, books.title
+      FROM loans
+      JOIN users ON loans.userId = users.id
+      JOIN books ON loans.bookId = books.id`,
+      [], (err, rows) => {
       if (err) {
         reject(err);
       } else {

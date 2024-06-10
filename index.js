@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import routers from "./src/routers/index.js";
 import "dotenv/config";
+import "./src/services/cron.service.js"
 
 const port = process.env.PORT || 3000;
 

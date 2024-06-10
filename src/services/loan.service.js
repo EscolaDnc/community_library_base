@@ -1,7 +1,7 @@
 import loanRepository from "../repositories/loan.repository.js";
 
-async function createLoanService(userId, bookId) {
-  const createdLoan = await loanRepository.createLoanRepository(userId, bookId);
+async function createLoanService(userId, bookId, dueDate) {
+  const createdLoan = await loanRepository.createLoanRepository(userId, bookId, dueDate);
   if (!createdLoan) throw new Error("Error creating Loan");
   return createdLoan;
 }
