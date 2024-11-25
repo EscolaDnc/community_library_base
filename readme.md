@@ -1,5 +1,5 @@
 # Community Library
-Teste Elaine Teste Elaine 
+Este é um projeto de uma biblioteca comunitária onde os usuários podem postar livros para compartilhar com outros usuários e também emprestar livros de outros membros da comunidade.
 
 ## Instalação
 
