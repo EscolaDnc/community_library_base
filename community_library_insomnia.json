@@ -1,0 +1,134 @@
+{
+    "_type": "export",
+    "__export_format": 4,
+    "__export_date": "2025-01-28T00:00:00.000Z",
+    "__export_source": "insomnia.desktop.app:v2023.1.0",
+    "resources": [
+        {
+            "_id": "fld_community_library",
+            "name": "Community Library",
+            "description": "Converted from Thunder Client to Insomnia",
+            "_type": "workspace"
+        },
+        {
+            "_id": "req_create_loan",
+            "parentId": "fld_community_library",
+            "name": "CREATE Loan",
+            "method": "POST",
+            "url": "http://localhost:3000/loans",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n  \"bookId\": 1\n}"
+            },
+            "_type": "request"
+        },
+        {
+            "_id": "req_get_loans",
+            "parentId": "fld_community_library",
+            "name": "GET All Loans",
+            "method": "GET",
+            "url": "http://localhost:3000/loans",
+            "_type": "request"
+        },
+        {
+            "_id": "req_create_user",
+            "parentId": "fld_community_library",
+            "name": "CREATE User",
+            "method": "POST",
+            "url": "http://localhost:3000/users",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n  \"username\": \"thiago\",\n  \"email\": \"thiago@gmail.com\",\n  \"password\": \"123456\",\n  \"avatar\": \"https://cdn-icons-png.flaticon.com/512/149/149071.png\"\n}"
+            },
+            "_type": "request"
+        },
+        {
+            "_id": "req_get_users",
+            "parentId": "fld_community_library",
+            "name": "GET All Users",
+            "method": "GET",
+            "url": "http://localhost:3000/users",
+            "_type": "request"
+        },
+        {
+            "_id": "req_login_user",
+            "parentId": "fld_community_library",
+            "name": "Login User",
+            "method": "POST",
+            "url": "http://localhost:3000/users/login",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n  \"email\": \"thiago@gmail.com\",\n  \"password\": \"1234567\"\n}"
+            },
+            "_type": "request"
+        },
+        {
+            "_id": "req_get_loan_by_id",
+            "parentId": "fld_community_library",
+            "name": "GET Loan by ID",
+            "method": "GET",
+            "url": "http://localhost:3000/loans/1",
+            "_type": "request"
+        },
+        {
+            "_id": "req_update_user",
+            "parentId": "fld_community_library",
+            "name": "UPDATE User",
+            "method": "PATCH",
+            "url": "http://localhost:3000/users",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n  \"username\": \"thiagolima\",\n  \"email\": \"thiago@gmail.com\",\n  \"password\": \"1234567\",\n  \"avatar\": \"https://cdn-icons-png.flaticon.com/512/149/149071.png\"\n}"
+            },
+            "_type": "request"
+        },
+        {
+            "_id": "req_delete_user_by_id",
+            "parentId": "fld_community_library",
+            "name": "DELETE User by ID",
+            "method": "DELETE",
+            "url": "http://localhost:3000/users/1",
+            "_type": "request"
+        },
+        {
+            "_id": "req_create_book",
+            "parentId": "fld_community_library",
+            "name": "CREATE Book",
+            "method": "POST",
+            "url": "http://localhost:3000/books",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n  \"title\": \"O poder do habito3\",\n  \"author\": \"Charles Duhigg\"\n}"
+            },
+            "_type": "request"
+        },
+        {
+            "_id": "req_get_books",
+            "parentId": "fld_community_library",
+            "name": "GET All Books",
+            "method": "GET",
+            "url": "http://localhost:3000/books",
+            "_type": "request"
+        },
+        {
+            "_id": "req_update_book",
+            "parentId": "fld_community_library",
+            "name": "UPDATE Book",
+            "method": "PATCH",
+            "url": "http://localhost:3000/books",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n  \"title\": \"O poder do habito2\",\n  \"author\": \"Charles Duhigg\"\n}"
+            },
+            "_type": "request"
+        },
+        {
+            "_id": "req_delete_book_by_id",
+            "parentId": "fld_community_library",
+            "name": "DELETE Book by ID",
+            "method": "DELETE",
+            "url": "http://localhost:3000/books/1",
+            "_type": "request"
+        }
+    ]
+}
